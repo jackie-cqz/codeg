@@ -4748,9 +4748,12 @@ pub fn get_agent_meta(agent_type: AgentType) -> AcpAgentMeta {
             // notification that ends a turn, which codeg does not read. The
             // rest (quota cards, CLIProxy, sandbox pacing when a workspace arms
             // the sandbox) is opt-in and outside what codeg drives.
+            // 0.75.0 preserves the stdio launch, mode and MCP contract. It also
+            // stops creating a sandbox template in an unarmed workspace (since
+            // 0.73.0), and improves headless resume and replayed card identity.
             distribution: AgentDistribution::Npx {
-                version: "0.72.0",
-                package: "zcode-acp-server@0.72.0",
+                version: "0.75.0",
+                package: "zcode-acp-server@0.75.0",
                 cmd: "zcode-acp-server",
                 args: &["server"],
                 env: &[],
